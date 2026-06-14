@@ -1,90 +1,113 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
 }
 
-/* HEADER */
-.header {
-  text-align: center;
-  padding: 30px 20px;
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 32px;
+.header{
+    text-align:center;
+    margin-bottom:20px;
 }
 
-.header p {
-  opacity: 0.7;
+.header h1{
+    margin:0;
 }
 
-/* SEARCH */
-.search-section {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
+.header p{
+    opacity:0.8;
 }
 
-#search {
-  width: 60%;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
+.search-section{
+    text-align:center;
+    margin-bottom:15px;
 }
 
-/* CATEGORIES */
-.categories {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  width: 70%;
-  margin: 20px auto;
+#search{
+    width:70%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
 }
 
-.card {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.3s;
+select,
+button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
 }
 
-.card:hover {
-  background: #334155;
-  transform: scale(1.03);
+button{
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
 }
 
-/* PANELS */
-.panel {
-  width: 70%;
-  margin: 30px auto;
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 10px;
+button:hover{
+    background:#1d4ed8;
 }
 
-/* SYSTEM INFO */
-#systemInfo {
-  list-style: none;
-  padding: 0;
+.categories{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:20px;
 }
 
-#systemInfo li {
-  padding: 5px 0;
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-/* DASHBOARD */
-.dashboard {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+.card:hover{
+    background:#334155;
+    transform:scale(1.03);
 }
 
-.dashboard div {
-  background: #0f172a;
-  padding: 10px;
-  border-radius: 8px;
+.panel{
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.dashboard div{
+    background:#0f172a;
+    padding:10px;
+    border-radius:8px;
+}
+
+#systemInfo{
+    list-style:none;
+    padding:0;
+}
+
+#systemInfo li{
+    padding:5px 0;
+}
+
+#result{
+    margin-top:20px;
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
 }
