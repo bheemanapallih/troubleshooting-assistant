@@ -1,57 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Troubleshooting Assistant</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Troubleshooting Assistant</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<div class="container">
+
   <header class="header">
-    <h1>Professional Troubleshooting Assistant</h1>
+    <h1>PC Troubleshooting Assistant</h1>
     <p>Diagnose and resolve common system issues</p>
   </header>
 
-  <!-- SEARCH -->
-  <section class="search-section">
-    <input type="text" id="search" placeholder="Search problems..." />
-  </section>
+  <div class="search-section">
+    <input type="text" id="search" placeholder="Search problems...">
+  </div>
 
-  <!-- CATEGORY CARDS -->
-  <section class="categories">
+  <select id="problem">
+    <option value="">Select a Problem</option>
+    <option value="internet">Internet Not Working</option>
+    <option value="wifi">WiFi Connected But No Internet</option>
+    <option value="slow">PC Running Slow</option>
+    <option value="printer">Printer Not Detected</option>
+  </select>
+
+  <button onclick="solveProblem()">Get Solution</button>
+
+  <div class="categories">
     <div class="card" onclick="openCategory('hardware')">🖥️ Hardware Issues</div>
     <div class="card" onclick="openCategory('network')">🌐 Network Issues</div>
     <div class="card" onclick="openCategory('audio')">🔊 Audio Issues</div>
     <div class="card" onclick="openCategory('peripheral')">🖨️ Peripheral Issues</div>
-  </section>
+  </div>
 
-  <!-- SYSTEM INFO -->
   <section class="panel">
     <h2>System Information</h2>
     <ul id="systemInfo">
       <li>OS: <span id="os"></span></li>
       <li>Browser: <span id="browser"></span></li>
       <li>Language: <span id="language"></span></li>
-      <li>Screen Resolution: <span id="resolution"></span></li>
-      <li>Status: <span id="status"></span></li>
+      <li>Resolution: <span id="resolution"></span></li>
     </ul>
   </section>
 
-  <!-- DASHBOARD -->
   <section class="panel">
     <h2>Dashboard</h2>
     <div class="dashboard">
-      <div>Total Diagnoses: <span id="total"></span></div>
-      <div>Hardware Issues: <span id="hardwareCount"></span></div>
-      <div>Network Issues: <span id="networkCount"></span></div>
-      <div>Audio Issues: <span id="audioCount"></span></div>
-      <div>Peripheral Issues: <span id="peripheralCount"></span></div>
+      <div>Total Diagnoses: <span id="total">0</span></div>
+      <div>Hardware Issues: <span id="hardwareCount">0</span></div>
+      <div>Network Issues: <span id="networkCount">0</span></div>
+      <div>Audio Issues: <span id="audioCount">0</span></div>
+      <div>Peripheral Issues: <span id="peripheralCount">0</span></div>
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <div id="result"></div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
