@@ -1,51 +1,90 @@
-function solveProblem(){
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
 
-    let problem = document.getElementById("problem").value;
-    let result = document.getElementById("result");
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 30px 20px;
+}
 
-    if(problem==="internet"){
-        result.innerHTML = `
-        <h3>Internet Not Working</h3>
-        <ul>
-            <li>Check router power.</li>
-            <li>Restart router.</li>
-            <li>Check network cables.</li>
-            <li>Contact ISP if issue continues.</li>
-        </ul>`;
-    }
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+}
 
-    else if(problem==="wifi"){
-        result.innerHTML = `
-        <h3>WiFi Connected But No Internet</h3>
-        <ul>
-            <li>Restart router.</li>
-            <li>Forget and reconnect WiFi.</li>
-            <li>Run Windows Network Troubleshooter.</li>
-        </ul>`;
-    }
+.header p {
+  opacity: 0.7;
+}
 
-    else if(problem==="slow"){
-        result.innerHTML = `
-        <h3>PC Running Slow</h3>
-        <ul>
-            <li>Close unnecessary apps.</li>
-            <li>Clear temporary files.</li>
-            <li>Scan for malware.</li>
-            <li>Upgrade RAM if possible.</li>
-        </ul>`;
-    }
+/* SEARCH */
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
 
-    else if(problem==="printer"){
-        result.innerHTML = `
-        <h3>Printer Not Detected</h3>
-        <ul>
-            <li>Reconnect USB cable.</li>
-            <li>Restart printer.</li>
-            <li>Reinstall printer drivers.</li>
-        </ul>`;
-    }
+#search {
+  width: 60%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+}
 
-    else{
-        result.innerHTML = "Please select a problem.";
-    }
+/* CATEGORIES */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 70%;
+  margin: 20px auto;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: #334155;
+  transform: scale(1.03);
+}
+
+/* PANELS */
+.panel {
+  width: 70%;
+  margin: 30px auto;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* SYSTEM INFO */
+#systemInfo {
+  list-style: none;
+  padding: 0;
+}
+
+#systemInfo li {
+  padding: 5px 0;
+}
+
+/* DASHBOARD */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.dashboard div {
+  background: #0f172a;
+  padding: 10px;
+  border-radius: 8px;
 }
