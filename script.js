@@ -5,11 +5,46 @@ let audioCount = 0;
 let peripheralCount = 0;
 
 // System Information
-document.getElementById("os").textContent =
-navigator.platform;
+function detectOS() {
+    const ua = navigator.userAgent;
+
+    if (ua.includes("Win64") || ua.includes("x64")) {
+        return "Windows 64-bit";
+    }
+    else if (ua.includes("Windows")) {
+        return "Windows";
+    }
+    else if (ua.includes("Android")) {
+        return "Android";
+    }
+    else if (ua.includes("iPhone") || ua.includes("iPad")) {
+        return "iOS";
+    }
+    else if (ua.includes("Mac")) {
+        return "macOS";
+    }
+    else if (ua.includes("Linux")) {
+        return "Linux";
+    }
+
+    return "Unknown";
+}
+
+document.getElementById("os").textContent = detectOS();
+
+function detectBrowser() {
+    const ua = navigator.userAgent;
+
+    if (ua.includes("Edg")) return "Microsoft Edge";
+    if (ua.includes("Chrome")) return "Google Chrome";
+    if (ua.includes("Firefox")) return "Mozilla Firefox";
+    if (ua.includes("Safari") && !ua.includes("Chrome")) return "Safari";
+
+    return "Unknown Browser";
+}
 
 document.getElementById("browser").textContent =
-navigator.userAgent.split(" ")[0];
+detectBrowser();
 
 document.getElementById("language").textContent =
 navigator.language;
