@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Troubleshooting Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>PC Troubleshooting Assistant</h1>
+
+    <select id="problem">
+        <option value="">Select a Problem</option>
+        <option value="internet">Internet Not Working</option>
+        <option value="wifi">WiFi Connected But No Internet</option>
+        <option value="slow">PC Running Slow</option>
+        <option value="printer">Printer Not Detected</option>
+    </select>
+
+    <button onclick="solveProblem()">Get Solution</button>
+
+    <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
