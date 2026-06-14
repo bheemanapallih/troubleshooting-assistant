@@ -1,113 +1,117 @@
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#0f172a;
-    color:white;
+let total = 0;
+let hardwareCount = 0;
+let networkCount = 0;
+let audioCount = 0;
+let peripheralCount = 0;
+
+// System Information
+document.getElementById("os").textContent =
+navigator.platform;
+
+document.getElementById("browser").textContent =
+navigator.userAgent.split(" ")[0];
+
+document.getElementById("language").textContent =
+navigator.language;
+
+document.getElementById("resolution").textContent =
+screen.width + " x " + screen.height;
+
+// Solve Problem
+function solveProblem(){
+
+    let problem =
+    document.getElementById("problem").value;
+
+    let result =
+    document.getElementById("result");
+
+    total++;
+
+    document.getElementById("total").textContent =
+    total;
+
+    switch(problem){
+
+        case "internet":
+            result.innerHTML = `
+            <h3>Internet Not Working</h3>
+            <ul>
+                <li>Check router power.</li>
+                <li>Restart router.</li>
+                <li>Check network cables.</li>
+                <li>Contact ISP.</li>
+            </ul>`;
+        break;
+
+        case "wifi":
+            result.innerHTML = `
+            <h3>WiFi Connected But No Internet</h3>
+            <ul>
+                <li>Restart router.</li>
+                <li>Reconnect WiFi.</li>
+                <li>Run troubleshooter.</li>
+            </ul>`;
+        break;
+
+        case "slow":
+            result.innerHTML = `
+            <h3>PC Running Slow</h3>
+            <ul>
+                <li>Close unused apps.</li>
+                <li>Clear temp files.</li>
+                <li>Scan for malware.</li>
+                <li>Upgrade RAM.</li>
+            </ul>`;
+        break;
+
+        case "printer":
+            result.innerHTML = `
+            <h3>Printer Not Detected</h3>
+            <ul>
+                <li>Reconnect USB.</li>
+                <li>Restart printer.</li>
+                <li>Install drivers.</li>
+            </ul>`;
+        break;
+
+        default:
+            result.innerHTML =
+            "Please select a problem.";
+    }
 }
 
-.container{
-    width:90%;
-    max-width:900px;
-    margin:auto;
-    padding:20px;
-}
+// Category Cards
+function openCategory(category){
 
-.header{
-    text-align:center;
-    margin-bottom:20px;
-}
+    switch(category){
 
-.header h1{
-    margin:0;
-}
+        case "hardware":
+            hardwareCount++;
+            document.getElementById("hardwareCount").textContent =
+            hardwareCount;
+            alert("Hardware troubleshooting opened.");
+        break;
 
-.header p{
-    opacity:0.8;
-}
+        case "network":
+            networkCount++;
+            document.getElementById("networkCount").textContent =
+            networkCount;
+            alert("Network troubleshooting opened.");
+        break;
 
-.search-section{
-    text-align:center;
-    margin-bottom:15px;
-}
+        case "audio":
+            audioCount++;
+            document.getElementById("audioCount").textContent =
+            audioCount;
+            alert("Audio troubleshooting opened.");
+        break;
 
-#search{
-    width:70%;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-}
-
-select,
-button{
-    width:100%;
-    padding:12px;
-    margin-top:10px;
-    border:none;
-    border-radius:8px;
-}
-
-button{
-    background:#2563eb;
-    color:white;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#1d4ed8;
-}
-
-.categories{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-    margin-top:20px;
-}
-
-.card{
-    background:#1e293b;
-    padding:20px;
-    border-radius:10px;
-    text-align:center;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.card:hover{
-    background:#334155;
-    transform:scale(1.03);
-}
-
-.panel{
-    background:#1e293b;
-    padding:20px;
-    border-radius:10px;
-    margin-top:20px;
-}
-
-.dashboard{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-}
-
-.dashboard div{
-    background:#0f172a;
-    padding:10px;
-    border-radius:8px;
-}
-
-#systemInfo{
-    list-style:none;
-    padding:0;
-}
-
-#systemInfo li{
-    padding:5px 0;
-}
-
-#result{
-    margin-top:20px;
-    background:#1e293b;
-    padding:20px;
-    border-radius:10px;
+        case "peripheral":
+            peripheralCount++;
+            document.getElementById("peripheralCount").textContent =
+            peripheralCount;
+            alert("Peripheral troubleshooting opened.");
+        break;
+    }
 }
