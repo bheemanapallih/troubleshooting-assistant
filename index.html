@@ -1,64 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Professional Troubleshooting Assistant</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Troubleshooting Assistant</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="container">
 
-  <header class="header">
-    <h1>PC Troubleshooting Assistant</h1>
-    <p>Diagnose and resolve common system issues</p>
-  </header>
+<header class="header">
+<h1>🛠 PC Troubleshooting Assistant</h1>
+<p>Diagnose and resolve common computer issues</p>
+</header>
 
-  <div class="search-section">
-    <input type="text" id="search" placeholder="Search problems...">
-  </div>
+<div class="search-section">
+<input type="text" id="search" placeholder="Search categories...">
+</div>
 
-  <select id="problem">
-    <option value="">Select a Problem</option>
-    <option value="internet">Internet Not Working</option>
-    <option value="wifi">WiFi Connected But No Internet</option>
-    <option value="slow">PC Running Slow</option>
-    <option value="printer">Printer Not Detected</option>
-  </select>
+<div class="problem-section">
+<select id="problem">
+<option value="">Select a Problem</option>
+<option value="internet">Internet Not Working</option>
+<option value="wifi">WiFi Connected But No Internet</option>
+<option value="slow">PC Running Slow</option>
+<option value="printer">Printer Not Detected</option>
+</select>
 
-  <button onclick="solveProblem()">Get Solution</button>
+<button onclick="solveProblem()">Get Solution</button>
+</div>
 
-  <div class="categories">
-    <div class="card" onclick="openCategory('hardware')">🖥️ Hardware Issues</div>
-    <div class="card" onclick="openCategory('network')">🌐 Network Issues</div>
-    <div class="card" onclick="openCategory('audio')">🔊 Audio Issues</div>
-    <div class="card" onclick="openCategory('peripheral')">🖨️ Peripheral Issues</div>
-  </div>
+<div class="categories">
+<div class="card" onclick="openCategory('hardware')">
+🖥️ Hardware Issues
+</div>
 
-  <section class="panel">
-    <h2>System Information</h2>
-    <ul id="systemInfo">
-      <li>OS: <span id="os"></span></li>
-      <li>Browser: <span id="browser"></span></li>
-      <li>Language: <span id="language"></span></li>
-      <li>Resolution: <span id="resolution"></span></li>
-    </ul>
-  </section>
+<div class="card" onclick="openCategory('network')">
+🌐 Network Issues
+</div>
 
-  <section class="panel">
-    <h2>Dashboard</h2>
-    <div class="dashboard">
-      <div>Total Diagnoses: <span id="total">0</span></div>
-      <div>Hardware Issues: <span id="hardwareCount">0</span></div>
-      <div>Network Issues: <span id="networkCount">0</span></div>
-      <div>Audio Issues: <span id="audioCount">0</span></div>
-      <div>Peripheral Issues: <span id="peripheralCount">0</span></div>
-    </div>
-  </section>
+<div class="card" onclick="openCategory('audio')">
+🔊 Audio Issues
+</div>
 
-  <div id="result"></div>
+<div class="card" onclick="openCategory('peripheral')">
+🖨️ Peripheral Issues
+</div>
+</div>
+
+<section class="panel">
+<h2>System Information</h2>
+
+<ul id="systemInfo">
+<li>OS: <span id="os"></span></li>
+<li>Browser: <span id="browser"></span></li>
+<li>Language: <span id="language"></span></li>
+<li>Resolution: <span id="resolution"></span></li>
+</ul>
+</section>
+
+<section class="panel">
+<h2>Dashboard</h2>
+
+<div class="dashboard">
+
+<div>
+Total Diagnoses
+<span id="total">0</span>
+</div>
+
+<div>
+Hardware Issues
+<span id="hardwareCount">0</span>
+</div>
+
+<div>
+Network Issues
+<span id="networkCount">0</span>
+</div>
+
+<div>
+Audio Issues
+<span id="audioCount">0</span>
+</div>
+
+<div>
+Peripheral Issues
+<span id="peripheralCount">0</span>
+</div>
+
+</div>
+</section>
+
+<div id="result">
+Select a category or problem to begin troubleshooting.
+</div>
 
 </div>
 
